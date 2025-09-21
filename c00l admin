@@ -1,42 +1,10 @@
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
--- Main GUI container
 local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
-gui.Name = "c00lkiddIntro"
+gui.Name = "c00lkiddCmds"
 gui.ResetOnSpawn = false
 
--- INTRO FRAME
-local introFrame = Instance.new("Frame", gui)
-introFrame.Size = UDim2.new(0, 0, 0, 0)
-introFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-introFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-introFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-introFrame.BorderSizePixel = 0
-
-local introText = Instance.new("TextLabel", introFrame)
-introText.Size = UDim2.new(1, 0, 1, 0)
-introText.BackgroundTransparency = 1
-introText.Font = Enum.Font.SourceSansBold
-introText.TextSize = 40
-introText.TextColor3 = Color3.new(1, 0, 0)
-introText.Text = "c00lkidd Cmds By Lua Land"
-introText.TextScaled = true
-
--- Animate intro
-introFrame:TweenSize(UDim2.new(0, 400, 0, 100), "Out", "Quad", 1, true)
-wait(1)
-
--- Fade out intro
-for i = 1, 0, -0.05 do
-	introFrame.BackgroundTransparency = 1 - i
-	introText.TextTransparency = 1 - i
-	wait(0.05)
-end
-
-introFrame:Destroy()
-
--- MAIN ADMIN GUI
 local frame = Instance.new("Frame", gui)
 frame.Size = UDim2.new(0, 400, 0, 360)
 frame.Position = UDim2.new(0.5, -200, 0.5, -180)
@@ -45,7 +13,6 @@ frame.BorderColor3 = Color3.new(1, 0, 0)
 frame.Active = true
 frame.Draggable = true
 
--- Title
 local title = Instance.new("TextLabel", frame)
 title.Size = UDim2.new(1, 0, 0, 40)
 title.BackgroundTransparency = 1
@@ -54,7 +21,6 @@ title.Font = Enum.Font.SourceSansBold
 title.TextSize = 24
 title.TextColor3 = Color3.new(1, 0, 0)
 
--- Rainbow Animation
 spawn(function()
 	while true do
 		for i = 0, 1, 0.01 do
@@ -64,7 +30,6 @@ spawn(function()
 	end
 end)
 
--- Scrollable Command List
 local scroll = Instance.new("ScrollingFrame", frame)
 scroll.Size = UDim2.new(1, -20, 0, 120)
 scroll.Position = UDim2.new(0, 10, 0, 50)
@@ -89,7 +54,6 @@ Fly
 Dex
 ]]
 
--- Command Input Frame
 local inputFrame = Instance.new("Frame", frame)
 inputFrame.Size = UDim2.new(1, -20, 0, 40)
 inputFrame.Position = UDim2.new(0, 10, 0, 180)
@@ -97,7 +61,6 @@ inputFrame.BackgroundColor3 = Color3.new(0, 0, 0)
 inputFrame.BorderColor3 = Color3.new(1, 0, 0)
 inputFrame.ClipsDescendants = true
 
--- Locked "/" Label
 local prefixLabel = Instance.new("TextLabel", inputFrame)
 prefixLabel.Size = UDim2.new(0, 20, 1, 0)
 prefixLabel.Position = UDim2.new(0, 5, 0, 0)
@@ -107,7 +70,6 @@ prefixLabel.TextSize = 20
 prefixLabel.TextColor3 = Color3.new(1, 0, 0)
 prefixLabel.Text = "/"
 
--- Editable TextBox (right side only)
 local commandBox = Instance.new("TextBox", inputFrame)
 commandBox.Size = UDim2.new(1, -30, 1, 0)
 commandBox.Position = UDim2.new(0, 25, 0, 0)
@@ -118,14 +80,12 @@ commandBox.TextColor3 = Color3.new(1, 1, 1)
 commandBox.Text = ""
 commandBox.ClearTextOnFocus = false
 
--- True Character Limit: 40
 commandBox:GetPropertyChangedSignal("Text"):Connect(function()
 	if #commandBox.Text > 40 then
 		commandBox.Text = commandBox.Text:sub(1, 40)
 	end
 end)
 
--- Run Button
 local run = Instance.new("TextButton", frame)
 run.Size = UDim2.new(1, -20, 0, 40)
 run.Position = UDim2.new(0, 10, 0, 230)
@@ -135,7 +95,6 @@ run.TextSize = 20
 run.TextColor3 = Color3.new(1, 1, 1)
 run.Text = "RUN"
 
--- Command System (Only Fly and Dex)
 local commandLinks = {
 	["fly"] = "https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt",
 	["dex"] = "https://raw.githubusercontent.com/infyiff/backup/main/dex.lua",

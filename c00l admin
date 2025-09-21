@@ -52,6 +52,7 @@ list.Text = [[
 Available Commands:
 Fly
 Dex
+Reset
 ]]
 
 local inputFrame = Instance.new("Frame", frame)
@@ -98,6 +99,7 @@ run.Text = "RUN"
 local commandLinks = {
 	["fly"] = "https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt",
 	["dex"] = "https://raw.githubusercontent.com/infyiff/backup/main/dex.lua",
+	["reset"] = "https://gist.githubusercontent.com/Angelo-Gitland/9562e670b787b61196d83213c316e7e5/raw/c6c35f7f7924fe2f37e6a97c8fb191aec01caff9/ResetOi",
 }
 
 run.MouseButton1Click:Connect(function()

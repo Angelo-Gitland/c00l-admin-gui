@@ -82,6 +82,7 @@ Dex
 Reset
 Bunny Hop
 Touch Fling
+Sit
 ]]
 
 local inputFrame = Instance.new("Frame", frame)
@@ -131,6 +132,7 @@ local commandLinks = {
 	["reset"] = "https://gist.githubusercontent.com/Angelo-Gitland/9562e670b787b61196d83213c316e7e5/raw/c6c35f7f7924fe2f37e6a97c8fb191aec01caff9/ResetOi",
 	["bunny hop"] = "https://gist.githubusercontent.com/Angelo-Gitland/3ba57e5a63b88874e0127c92de07a948/raw/450fad177e24e71b2ce425a8e1e865cc1edad435/Bunny%2520hop%2520script",
 	["touch fling"] = "https://gist.githubusercontent.com/Angelo-Gitland/925545039c7de8f8860e3cfdfef177f1/raw/cee55dae0cb5599dc784d32864c9a9286b8a4e3f/freTouchDlfling",
+	["sit"] = "https://gist.githubusercontent.com/Angelo-Gitland/fd84961c4c6e287e952a4dfd4f92ea19/raw/0d513eca1cb2e4e259f2e80c3bbe2c08b0a96ed3/Sit%2520script",
 }
 
 run.MouseButton1Click:Connect(function()

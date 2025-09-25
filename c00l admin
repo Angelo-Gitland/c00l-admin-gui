@@ -76,13 +76,14 @@ list.TextWrapped = true
 list.TextYAlignment = Enum.TextYAlignment.Top
 list.TextXAlignment = Enum.TextXAlignment.Left
 list.Text = [[
-Available Commands:
+COMMANDS:
 Fly
 Dex
 Reset
 Bunny Hop
 Touch Fling
 Sit
+Anti-Kick
 ]]
 
 local inputFrame = Instance.new("Frame", frame)
@@ -133,6 +134,7 @@ local commandLinks = {
 	["bunny hop"] = "https://gist.githubusercontent.com/Angelo-Gitland/3ba57e5a63b88874e0127c92de07a948/raw/450fad177e24e71b2ce425a8e1e865cc1edad435/Bunny%2520hop%2520script",
 	["touch fling"] = "https://gist.githubusercontent.com/Angelo-Gitland/925545039c7de8f8860e3cfdfef177f1/raw/cee55dae0cb5599dc784d32864c9a9286b8a4e3f/freTouchDlfling",
 	["sit"] = "https://gist.githubusercontent.com/Angelo-Gitland/fd84961c4c6e287e952a4dfd4f92ea19/raw/0d513eca1cb2e4e259f2e80c3bbe2c08b0a96ed3/Sit%2520script",
+	["anti-kick"] = "https://pastebin.com/raw/ETxWjAPi",
 }
 
 run.MouseButton1Click:Connect(function()
